@@ -19,8 +19,6 @@ public class AirlineTicketsApplication {
     public static void main(String[] args) {
 		SpringApplication.run(AirlineTicketsApplication.class, args);
 
-		// Establezco una lista de objetos Vuelo como datos de prueba
-
         List<Vuelo> vuelos = new ArrayList<>();
         Vuelo vuelo1 = new Vuelo("B542", "Mendoza", 5, LocalDate.of(2021,9,02));
         Vuelo vuelo2 = new Vuelo("B545", "Mendoza", 4, LocalDate.of(2021,9,03));
@@ -71,17 +69,25 @@ public class AirlineTicketsApplication {
         vuelos.add(vuelo23);
         vuelos.add(vuelo24);
 
+//      Ahora creo una lista de pasajeros que proximamente voy a asociar a un vuelo
 
-//        Enseño en consola los parametros utilizados que se aplicaran en este filtro especifico
+        List<Pasajero> tripulacion1 = new ArrayList<>();
+        tripulacion1.add(new Pasajero(23565849, "Pedro", "Picapiedra", vuelo1));
+        tripulacion1.add(new Pasajero(48955651, "Nicolas", "Cage", vuelo1));
+        tripulacion1.add(new Pasajero(54124474, "Clark", "Kent", vuelo1));
+        tripulacion1.add(new Pasajero(14789889, "Roger", "Federer", vuelo1));
 
-        System.out.println("Vuelos disponibles con los siguientes parametros:");
-        System.out.println("Destino: Mendoza");
 
 
-//        Realizo el filtro para que cumpla con el parametro establecido anteriormente y enseño en consola las coincidencias
+//        Actualizo el mensaje en consola
+        System.out.println("< -- ------------------------------------ -- >");
+        System.out.println("Lista de pasajeros del vuelo numero:");
+        System.out.println("B542");
 
-        List<Vuelo> vueloElegido = vuelos.stream().filter(x -> x.getDestino().equals("Mendoza")).collect(Collectors.toList());
-        vueloElegido.stream().forEach(x -> System.out.println(x.getNumeroDeVuelo() +" "+ x.getDestino() +" "+ x.getFecha()));
+
+//       Imprimendo en consola se puede apreciar que ya tienen una relacion entre ambas entidades pudiendo asi un pasajero acceder a las propiedades de su vuelo y viceversa
+
+        tripulacion1.forEach(x -> System.out.println(x.getNombre() +" "+ x.getApellido() +" "+ x.getDni() +" N de vuelo: " +x.getVuelo().getNumeroDeVuelo() ));
 
 
     }
