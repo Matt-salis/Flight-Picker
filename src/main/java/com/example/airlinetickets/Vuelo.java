@@ -1,12 +1,9 @@
 package com.example.airlinetickets;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
 
 
 @Entity
@@ -18,9 +15,6 @@ public class Vuelo {
     private Integer capacidad;
     private LocalDate fecha;
 
-    @OneToMany(mappedBy = "vuelo", fetch = FetchType.EAGER)
-    private List<Pasajero> pasajeros;
-
     public Vuelo(){}
     public Vuelo(String numeroDeVuelo, String destino, Integer capacidad, LocalDate fecha) {
         this.numeroDeVuelo = numeroDeVuelo;
@@ -28,15 +22,6 @@ public class Vuelo {
         this.capacidad = capacidad;
         this.fecha = fecha;
     }
-
-    public Vuelo(String numeroDeVuelo, String destino, Integer capacidad, LocalDate fecha, List<Pasajero> pasajeros) {
-        this.numeroDeVuelo = numeroDeVuelo;
-        this.destino = destino;
-        this.capacidad = capacidad;
-        this.fecha = fecha;
-        this.pasajeros = pasajeros;
-    }
-
     public Vuelo(String destino, Integer capacidad, LocalDate fecha) {
         this.destino = destino;
         this.fecha = fecha;
@@ -72,13 +57,5 @@ public class Vuelo {
 
     public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
-    }
-
-    public List<Pasajero> getPasajeros() {
-        return pasajeros;
-    }
-
-    public void setPasajeros(List<Pasajero> pasajeros) {
-        this.pasajeros = pasajeros;
     }
 }
