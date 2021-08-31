@@ -1,14 +1,10 @@
 package com.example.airlinetickets;
 
-import javax.persistence.Id;
 import java.time.LocalDate;
 
-
-
 public class Vuelo {
-    @Id
-    private String numeroDeVuelo;
 
+    private String numeroDeVuelo;
     private String destino;
     private Integer capacidad;
     private LocalDate fecha;
