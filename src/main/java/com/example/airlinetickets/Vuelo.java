@@ -1,19 +1,14 @@
 package com.example.airlinetickets;
 
-import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 
-@Entity
 public class Vuelo {
-    @Id
-    private String numeroDeVuelo;
 
+    private String numeroDeVuelo;
     private String destino;
     private Integer capacidad;
     private LocalDate fecha;
