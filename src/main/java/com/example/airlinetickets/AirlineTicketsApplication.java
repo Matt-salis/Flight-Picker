@@ -81,15 +81,17 @@ public class AirlineTicketsApplication {
 
 //        Actualizo el mensaje en consola
         System.out.println("< -- ------------------------------------ -- >");
-        System.out.println("Lista de pasajeros del vuelo numero:");
-        System.out.println("B542");
+        System.out.println("Lista de pasajeros con dni:");
+        System.out.println("23565849");
         System.out.println("Pasajeros: ");
 
 
-//       Imprimendo en consola se puede apreciar que ya tienen una relacion entre ambas entidades pudiendo asi un pasajero acceder a las propiedades de su vuelo y viceversa
-
-        tripulacion1.forEach(x -> System.out.println(x.getNombre() +" "+ x.getApellido() +" "+ x.getDni() +" N de vuelo: " +x.getVuelo().getNumeroDeVuelo() ));
-
+//       Recorro la lista "Tripulacion1" y por cada pasajero que cumpla con la condicion indicada, que lo muestre en consola
+        for(Pasajero pasajero:tripulacion1){
+            if(pasajero.getDni() == 23565849) {
+                System.out.println(pasajero.getNombre() +" "+ pasajero.getApellido() +" "+ pasajero.getDni() +" "+ pasajero.getVuelo().getNumeroDeVuelo());
+            }
+        }
 
     }
 
