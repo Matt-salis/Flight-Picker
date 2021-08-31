@@ -1,12 +1,10 @@
 package com.example.airlinetickets;
 
-import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 
-@Entity
+
 public class Vuelo {
     @Id
     private String numeroDeVuelo;
