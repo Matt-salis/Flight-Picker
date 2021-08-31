@@ -83,6 +83,7 @@ public class AirlineTicketsApplication {
         System.out.println("< -- ------------------------------------ -- >");
         System.out.println("Lista de pasajeros del vuelo numero:");
         System.out.println("B542");
+        System.out.println("Pasajeros: ");
 
 
 //       Imprimendo en consola se puede apreciar que ya tienen una relacion entre ambas entidades pudiendo asi un pasajero acceder a las propiedades de su vuelo y viceversa
